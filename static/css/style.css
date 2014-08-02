@@ -1,0 +1,44 @@
+.bird {
+	/*float: left;*/
+	margin: 5px;
+	position: relative;
+}
+
+.fa-check {
+	position: absolute;
+	bottom: 9px;
+	right: 5px;
+	color: #fff;
+	background-color: #000;
+	border-radius: 50%;
+	padding: 2px;
+}
+
+.banner {
+	height: 50px;
+	color: #fff;
+}
+
+.perching-birds {
+	background-color: rgb(255, 47, 31);
+}
+
+.doves-woodpeckers-etc {
+	background-color: rgb(0, 115, 11);
+}
+
+.waterbirds-and-nearshore-birds {
+	background-color: rgb(29, 131, 232);
+}
+
+.birds-of-prey {
+	background-color: rgb(125, 0, 255);
+}
+
+.test {
+	width: 0;
+	height: 0;
+	border-left: 300px solid rgb(255, 47, 31);
+	border-top: 25px solid rgb(255, 47, 31);
+	border-right: 25px solid transparent;
+}

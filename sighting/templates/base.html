@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="authentication">
+    {% if user.is_authenticated %}
+        Hi {{user}}! <a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'django.contrib.auth.views.login' %}">Login</a>
+    {% endif %}
+</div>
+{% block content %}{% endblock %}
+</body>
+</html>

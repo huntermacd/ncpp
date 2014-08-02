@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ bird.name }}{% endblock %}
+{% block content %}
+	<header>
+		<a href="{% url 'bird_list' %}">Back to Index</a>
+	</header>
+	<h3>{{ bird.name }}</h3>
+	<i>{{ bird.scientific_name }}</i>
+	<p>{{ bird.size }}</p>
+	<p>{{ bird.info }}</p>
+	<img src="{{ bird.pic.url }}">
+	{% if user.is_authenticated %}
+		<form method="POST" action="{% url 'bird_detail' bird_name=bird.slug %}">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Save Sighting</button>
+		</form>
+	{% endif %}
+	<p><a href="http://en.wikipedia.org/wiki/{{ bird.name }}">View on Wikipedia</a></p>
+{% endblock %}
