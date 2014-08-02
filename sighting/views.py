@@ -13,7 +13,7 @@ def bird_list(request):
 	current_birder = get_user(request)
 	sightings = None
 	if not current_birder.is_anonymous():
-		sightings = get_object_or_404(Sighting, birder=current_birder)
+		sightings = Sighting.objects.filter(birder=current_birder)
 	ctx = {
 		'waterbirds_and_nearshore_birds': waterbirds_and_nearshore_birds,
 		'doves_woodpeckers_etc': doves_woodpeckers_etc,

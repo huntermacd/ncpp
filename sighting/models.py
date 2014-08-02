@@ -30,4 +30,4 @@ class Sighting(models.Model):
 	sighted = models.BooleanField()
 
 	def __str__(self):
-		return self.birder.username
+		return str(self.bird) + " sighted by " + str(self.birder.username)

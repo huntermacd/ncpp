@@ -9,9 +9,16 @@
 		<p>Perching Birds</p>
 	</div>
 	{% for bird in perching_birds %}
-			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
+		<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% for sighting in sightings %}
+						{% if sighting.bird == bird %}
+							{% if sighting.sighted %}
+								<i class="fa fa-check"></i>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
@@ -21,7 +28,14 @@
 	{% for bird in doves_woodpeckers_etc %}
 			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% for sighting in sightings %}
+						{% if sighting.bird == bird %}
+							{% if sighting.sighted %}
+								<i class="fa fa-check"></i>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
@@ -31,7 +45,14 @@
 	{% for bird in waterbirds_and_nearshore_birds %}
 			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% for sighting in sightings %}
+						{% if sighting.bird == bird %}
+							{% if sighting.sighted %}
+								<i class="fa fa-check"></i>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
@@ -41,7 +62,14 @@
 	{% for bird in birds_of_prey %}
 			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% for sighting in sightings %}
+						{% if sighting.bird == bird %}
+							{% if sighting.sighted %}
+								<i class="fa fa-check"></i>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
