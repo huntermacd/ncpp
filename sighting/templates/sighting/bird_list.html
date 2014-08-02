@@ -11,7 +11,7 @@
 	{% for bird in perching_birds %}
 			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if bird %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
@@ -21,7 +21,7 @@
 	{% for bird in doves_woodpeckers_etc %}
 			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if bird %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
@@ -31,7 +31,7 @@
 	{% for bird in waterbirds_and_nearshore_birds %}
 			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if bird %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
@@ -41,7 +41,7 @@
 	{% for bird in birds_of_prey %}
 			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
 				<div class="bird">
-					{% if bird %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
+					{% if sightings.sighted %}<i class="fa fa-check"></i>{% endif %}<img src="{{ bird.pic.url }}" height="100" width="100">
 				</div>
 			</a>
 	{% endfor %}
