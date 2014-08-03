@@ -2,72 +2,106 @@
 
 {% block title %}Bird List{% endblock %}
 {% block content %}
-	<div class="banner perching-birds">
-		<p>Perching Birds</p>
-	</div>
-	{% for bird in perching_birds %}
-		<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
-				<div class="bird">
-					{% for sighting in sightings %}
-						{% if sighting.bird == bird %}
-							{% if sighting.sighted %}
-								<i class="fa fa-check"></i>
-							{% endif %}
-						{% endif %}
-					{% endfor %}
-					<img src="{{ bird.pic.url }}" height="100" width="100">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="banner perching-birds">
+					<p>Perching Birds</p>
 				</div>
-			</a>
-	{% endfor %}
-	<div class="banner doves-woodpeckers-etc">
-		<p>Doves, Woodpeckers, Etc.</p>
-	</div>
-	{% for bird in doves_woodpeckers_etc %}
-			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
-				<div class="bird">
-					{% for sighting in sightings %}
-						{% if sighting.bird == bird %}
-							{% if sighting.sighted %}
-								<i class="fa fa-check"></i>
-							{% endif %}
-						{% endif %}
-					{% endfor %}
-					<img src="{{ bird.pic.url }}" height="100" width="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{% for bird in perching_birds %}
+					<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
+							<div class="bird">
+								{% for sighting in sightings %}
+									{% if sighting.bird == bird %}
+										{% if sighting.sighted %}
+											<i class="fa fa-check"></i>
+										{% endif %}
+									{% endif %}
+								{% endfor %}
+								<img src="{{ bird.pic.url }}">
+							</div>
+						</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="banner doves-woodpeckers-etc">
+					<p>Doves, Woodpeckers, Etc.</p>
 				</div>
-			</a>
-	{% endfor %}
-	<div class="banner waterbirds-and-nearshore-birds">
-		<p>Waterbirds &amp; Nearshore Birds</p>
-	</div>
-	{% for bird in waterbirds_and_nearshore_birds %}
-			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
-				<div class="bird">
-					{% for sighting in sightings %}
-						{% if sighting.bird == bird %}
-							{% if sighting.sighted %}
-								<i class="fa fa-check"></i>
-							{% endif %}
-						{% endif %}
-					{% endfor %}
-					<img src="{{ bird.pic.url }}" height="100" width="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{% for bird in doves_woodpeckers_etc %}
+						<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
+							<div class="bird">
+								{% for sighting in sightings %}
+									{% if sighting.bird == bird %}
+										{% if sighting.sighted %}
+											<i class="fa fa-check"></i>
+										{% endif %}
+									{% endif %}
+								{% endfor %}
+								<img src="{{ bird.pic.url }}" height="100" width="100">
+							</div>
+						</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="banner waterbirds-and-nearshore-birds">
+					<p>Waterbirds &amp; Nearshore Birds</p>
 				</div>
-			</a>
-	{% endfor %}
-	<div class="banner birds-of-prey">
-		<p>Birds of Prey</p>
-	</div>
-	{% for bird in birds_of_prey %}
-			<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
-				<div class="bird">
-					{% for sighting in sightings %}
-						{% if sighting.bird == bird %}
-							{% if sighting.sighted %}
-								<i class="fa fa-check"></i>
-							{% endif %}
-						{% endif %}
-					{% endfor %}
-					<img src="{{ bird.pic.url }}" height="100" width="100">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{% for bird in waterbirds_and_nearshore_birds %}
+						<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
+							<div class="bird">
+								{% for sighting in sightings %}
+									{% if sighting.bird == bird %}
+										{% if sighting.sighted %}
+											<i class="fa fa-check"></i>
+										{% endif %}
+									{% endif %}
+								{% endfor %}
+								<img src="{{ bird.pic.url }}" height="100" width="100">
+							</div>
+						</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="banner birds-of-prey">
+					<p>Birds of Prey</p>
 				</div>
-			</a>
-	{% endfor %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{% for bird in birds_of_prey %}
+						<a href="{% url 'bird_detail' bird_name=bird.slug %}">	
+							<div class="bird">
+								{% for sighting in sightings %}
+									{% if sighting.bird == bird %}
+										{% if sighting.sighted %}
+											<i class="fa fa-check"></i>
+										{% endif %}
+									{% endif %}
+								{% endfor %}
+								<img src="{{ bird.pic.url }}" height="100" width="100">
+							</div>
+						</a>
+				{% endfor %}
+			</div>
+		</div>	
+	</div>
 {% endblock %}

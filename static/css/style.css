@@ -1,11 +1,16 @@
-body {
-	padding-top: 70px;
-}
-
 .bird {
 	float: left;
-	margin: 5px;
 	position: relative;
+}
+
+.bird img {
+	height: 100px;
+	width: 100px;
+}
+
+.container-fluid {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .fa-check {
@@ -18,10 +23,37 @@ body {
 	padding: 2px;
 }
 
+.detail img {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+.detail {
+	max-width: 500px;
+}
+
+@media (max-width: 500px) {
+	.navbar-text {
+		text-align: center;
+	}
+	.navbar-brand {
+		margin-left: 10px;
+	}
+}
+
+textarea {
+	width: 100%;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
 .banner {
 	height: 25px;
 	color: #fff;
 	clear: both;
+	margin: 5px 0;
 }
 
 .perching-birds {
@@ -38,4 +70,25 @@ body {
 
 .birds-of-prey {
 	background-color: rgb(125, 0, 255);
+}
+
+#copyright {
+	text-align: center;
+}
+
+.login {
+	margin: 0 auto;
+}
+
+.btn-default {
+	width: 100%;
+}
+
+input {
+	border: 1px solid #adadad;
+	border-radius: 5px;
+}
+
+.wiki {
+	text-align: right;
 }

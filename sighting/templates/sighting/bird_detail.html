@@ -2,20 +2,44 @@
 
 {% block title %}{{ bird.name }}{% endblock %}
 {% block content %}
-	<header>
-		<a href="{% url 'bird_list' %}">Back to Index</a>
-	</header>
-	<h3>{{ bird.name }}</h3>
-	<i>{{ bird.scientific_name }}</i>
-	<p>{{ bird.size }}</p>
-	<p>{{ bird.info }}</p>
-	<img src="{{ bird.pic.url }}">
-	{% if user.is_authenticated %}
-		<form method="POST" action="{% url 'bird_detail' bird_name=bird.slug %}">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit">Save Sighting</button>
-		</form>
-	{% endif %}
-	<p><a href="http://en.wikipedia.org/wiki/{{ bird.name }}">View on Wikipedia</a></p>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-6">
+				<i class="fa fa-arrow-left"></i> <a href="{% url 'bird_list' %}">Back to Index</a>
+			</div>
+			<div class="col-xs-6 wiki">
+				<a href="http://en.wikipedia.org/wiki/{{ bird.name }}">View Wikipedia</a> <i class="fa fa-arrow-right"></i>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid detail">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>{{ bird.name }}</h3>
+				<p><small><i>{{ bird.scientific_name }}</i></small></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>{{ bird.size }}</p>
+				<p>{{ bird.info }}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<img src="{{ bird.pic.url }}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{% if user.is_authenticated %}
+					<form method="POST" action="{% url 'bird_detail' bird_name=bird.slug %}">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<button class="btn btn-default" type="submit">Save Sighting</button>
+					</form>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
