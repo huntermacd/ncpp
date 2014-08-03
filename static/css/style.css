@@ -1,5 +1,9 @@
+body {
+	padding-top: 70px;
+}
+
 .bird {
-	/*float: left;*/
+	float: left;
 	margin: 5px;
 	position: relative;
 }
@@ -15,8 +19,9 @@
 }
 
 .banner {
-	height: 50px;
+	height: 25px;
 	color: #fff;
+	clear: both;
 }
 
 .perching-birds {
@@ -33,12 +38,4 @@
 
 .birds-of-prey {
 	background-color: rgb(125, 0, 255);
-}
-
-.test {
-	width: 0;
-	height: 0;
-	border-left: 300px solid rgb(255, 47, 31);
-	border-top: 25px solid rgb(255, 47, 31);
-	border-right: 25px solid transparent;
 }

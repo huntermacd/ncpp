@@ -3,18 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="authentication">
-    {% if user.is_authenticated %}
-        Hi {{user}}! <a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>
-    {% else %}
-        <a href="{% url 'django.contrib.auth.views.login' %}">Login</a>
-    {% endif %}
-</div>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<a href="{% url 'bird_list' %}" class="navbar-brand">North Carolina Pipper Peeper</a>
+			{% if user.is_authenticated %}
+				<p class="navbar-text navbar-right">Logged in as: {{user}} &middot; <a href="{% url 'django.contrib.auth.views.logout' %}" class="navbar-link">Logout</a>
+			{% else %}
+		        <a href="{% url 'django.contrib.auth.views.login' %}" class="navbar-link">Login</a>
+		    {% endif %}
+		</div>
+	</nav>
 {% block content %}{% endblock %}
 </body>
 </html>
