@@ -1,11 +1,12 @@
 .bird {
 	float: left;
 	position: relative;
+	margin: 2px;
 }
 
 .bird img {
-	height: 100px;
-	width: 100px;
+	height: 96px;
+	width: 96px;
 }
 
 .container-fluid {
@@ -53,11 +54,15 @@ textarea {
 	height: 25px;
 	color: #fff;
 	clear: both;
-	margin: 5px 0;
+	margin: 2px;
+	padding: 3px;
+	border-radius: 5px 5px 0 0;
+	margin-top: 25px;
 }
 
 .perching-birds {
 	background-color: rgb(255, 47, 31);
+	margin-top: 2px;
 }
 
 .doves-woodpeckers-etc {
