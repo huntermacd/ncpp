@@ -31,6 +31,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'sighting',
+    'storages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,8 +98,15 @@ ALLOWED_HOSTS = ['ncpipperpeeper.herokuapp.com/']
 # Static asset configuration
 STATIC_ROOT = 'staticfiles'
 
-STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# AWS S3
+DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'ncppimgs'
+
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
