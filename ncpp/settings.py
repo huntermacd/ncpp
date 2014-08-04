@@ -103,11 +103,14 @@ STATICFILES_DIRS = (
 )
 
 # AWS S3
-STATICFILES_STORAGE = 'libs.storages.S3Storage.S3Storage'
-DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
+STATICFILES_STORAGE = 'storages.S3Storage.S3Storage'
+DEFAULT_FILE_STORAGE = 'storages.S3Storage.S3Storage'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'ncppimgs'
 
 STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+from S3 import CallingFormat
+AWS_CALLING_FORMAT = CallingFormat.SUBDOMAIN
