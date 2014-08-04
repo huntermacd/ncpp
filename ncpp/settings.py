@@ -83,7 +83,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-DEBUG = True
+DEBUG = False
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
@@ -111,6 +111,3 @@ AWS_STORAGE_BUCKET_NAME = 'ncppimgs'
 
 STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
-from S3 import CallingFormat
-AWS_CALLING_FORMAT = CallingFormat.SUBDOMAIN
