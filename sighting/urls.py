@@ -11,8 +11,6 @@ urlpatterns = patterns('',
 	url(r'^sighting/(?P<bird_name>[\w-]*)$', views.bird_detail, name="bird_detail"),
 ) 
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 # while in development, serve images from local dir
 if settings.DEBUG == True:
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

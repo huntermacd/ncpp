@@ -82,7 +82,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-DEBUG = False
+DEBUG = True
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
@@ -92,19 +92,13 @@ DATABASES['default'] =  dj_database_url.config()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ncpipperpeeper.herokuapp.com/']
 
 # Static asset configuration
-PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-PROJECT_ROOT = os.path.abspath(os.path.join(PROJECT_PATH, os.pardir))
+STATIC_ROOT = 'staticfiles'
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH,'static'),
-)
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
 )
