@@ -103,6 +103,7 @@ STATICFILES_DIRS = (
 )
 
 # AWS S3
+STATICFILES_STORAGE = 'libs.storages.S3Storage.S3Storage'
 DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
