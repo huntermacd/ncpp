@@ -1,3 +1,8 @@
+#wrap {
+	max-width: 1020px;
+	margin: 0 auto;
+}
+
 .bird {
 	float: left;
 	position: relative;
@@ -55,10 +60,9 @@ textarea {
 	width: 250px;
 	color: #fff;
 	clear: both;
-	margin: 2px;
+	margin: 2px auto;
 	padding: 5px;
 	border-radius: 15px 0;
-	margin-top: 25px;
 	text-align: center;
 }
 
